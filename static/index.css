@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300|Open+Sans');
+*{
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+  background-color: #779ECB;
+  font-family: sans-serif;
+}
+.blackground,.backimage{
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: -2;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.blackground:nth-of-type(1){
+  background-color: black;
+  z-index: -1;
+  opacity: 0.7
+}
+@keyframes fade {0% {opacity:1;}15% {opacity:1;}25%{opacity:0;}90% {opacity: 0}100% {opacity:1;}}
+.backimage:nth-of-type(1){
+  background-image: url("http://omargardens.com/blog/wp-content/uploads/2016/06/What-is-4x4-Gardening.jpg");
+  animation: fade 12s ease-in-out 9s infinite;
+}
+.backimage:nth-of-type(2){
+  background-image: url("http://www.lasallecollegevancouver.com/~/media/images/responsive/aiv/digital_media_arts/programme8_1920x1080.ashx");
+  animation: fade 12s ease-in-out 6s infinite;
+}
+.backimage:nth-of-type(3){
+  background-image: url("http://4.bp.blogspot.com/-Bb6kks9yas4/WFckKtG7b6I/AAAAAAAAMBk/NTksL7vtE1soMrbQcomwtxwkWu1EmXg-ACLcB/s1600/paint.jpg");
+  animation: fade 12s ease-in-out 3s infinite;
+}
+.backimage:nth-of-type(4){
+  background-image: url("https://www.rentokil.com/blog/wp-content/uploads/2016/03/how-to-prevent-bed-bugs-when-travelling-v2.jpg");
+  animation: fade 12s ease-in-out 0s infinite;
+}
+.banner{
+  background-color: transparent;
+  width: 100%;
+  height: 14vh;
+  padding: 2vmin 5%;
+  display: grid;
+  grid-template-rows: 100%;
+  grid-template-columns: 50% 25%;
+  grid-column-gap: 25%
+}
+.logo{
+  width: 100%;
+  height: 100%;
+}
+.logo img{
+  height: 100%
+}
+.menu{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-family:'Open Sans', sans-serif;
+}
+.menu a{
+  text-decoration: none;
+  color: white;
+  font-size: 0.9em;
+  padding: 0.5em 1em;
+  border: 1px solid transparent;
+  border-radius: 1.25em;
+  margin: 0 0 0 7.5%
+}
+.menu a:nth-of-type(1){
+  background: rgba(255,255,255, 0.4)
+}
+.menu a:nth-of-type(1):hover{
+  background: rgba(255,255,255, 1);
+  color: #779ECB
+}
+.menu a:nth-of-type(2){
+  background: rgba(119,158,203, 0.85)
+}
+.menu a:nth-of-type(2):hover{
+  background: rgba(119,158,203, 1);
+  box-shadow: 0px 0px 2px 0px white
+}
+header{
+  padding: 1vmin 15vmin;
+  color: white;
+}
+header .text{
+  position: absolute;
+  left: 30vmin;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: fit-content;
+  width: 60vw;
+  font-size: 2em;
+  font-family:'Merriweather', serif;
+}
+header input{
+  width: 18.5vw;
+  height: 7.5vmin;
+  padding: 2em 1vmin 1em 1vmin;
+  font-family:'Open Sans', sans-serif;
+}
+header label{
+  font-size: 0.35em;
+  position: absolute;
+  margin: 0.5em 1vmin;
+  color: black;
+}
+
+header button{
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  height: 7.5vmin;
+  width: 18.5vw;
+  padding: 1.5em 1vmin;
+  position: absolute;
+  overflow: hidden;
+  cursor: pointer;
+}
+header button:after{
+  content: "";
+  height: inherit;
+  float: right;
+  top: 7.5vmin;
+  left: 0;
+  right: 0;
+  margin: 0;
+  content: "";
+  position: absolute;
+  background-color: #779ECB;
+  transition: 500ms;
+  z-index: -1;
+}
+header button:hover:after{
+  top:0;
+}
+/*Sign Up*/
+.banner{
+  padding: 2vmin 5%
+}
+.signin a{
+  background-color: inherit!important;
+  border: 1px solid transparent;
+}
+.signin a:nth-of-type(1):hover,.signin a:nth-of-type(2):hover{
+  background: inherit;
+  color: white;
+  border: 1px solid white;
+  box-shadow: none;
+}
+.whiteback{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 14vh;
+  width: 50%;
+  background-color: white;
+  z-index: -1;
+}
+.register{
+  height: 86vh;
+  width: 100%;
+  display: flex;
+}
+.image{
+  height: 100%;
+  width: 50%;
+  background-image: url("https://cdn.dribbble.com/users/20883/screenshots/2166591/artsebasov-ipq2-icons.png");
+  background-size: contain;
+}
+.forms{
+  height: 100%;
+  width: 50%;
+  position: relative;
+  padding: 5%
+}
+.buttons{
+  height: 10%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 100%
+}
+.signup-button, .login-button{
+  width: 100%;
+  padding: 2vmin;
+  border: 0px solid;
+  outline: none;
+  cursor: pointer;
+}
+.signup-button{
+  background-color: white;
+  color: #779ECB
+}
+.login-button{
+  background-color: grey;
+  color: white
+}
+.register form{
+  position: absolute;
+  margin: auto;
+  height: fit-content;
+  width: 80%;
+  bottom: 5vmax;
+  left: 0;
+  right: 0
+}
+.showhobbies:nth-of-type(1) p{
+  color: white;
+  font-size: 1.2em;
+  text-transform: none;
+  margin-top: 0;
+}
+.showhobbies p{
+  margin-right: 0.5em;
+  text-transform: capitalize;
+}
+.error{
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background-color: white;
+  color: red;
+  text-align: center;
+}
+.register form input{
+  width: 100%;
+  height: 7.5vmin;
+  margin: 0.5em 0;
+  color: #779ECB;
+  padding: 2em 1vmin 1em 1vmin;
+  font-family:'Open Sans', sans-serif;
+}
+.register form label{
+  font-size: 0.75em;
+  position: absolute;
+  margin: 1.25em 1vmin;
+  color: black;
+}
+.register form button{
+  height: 3em;
+  margin-top: 0.5em;
+  width: 5.5em;
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  padding: 0.75em;
+  cursor: pointer;
+  overflow: hidden;
+}
+.register form button:hover{
+  color: black;
+  background-color: white
+}
+.register textarea{
+  width: 100%;
+  height: 10vmin;
+  margin: 0.5em 0;
+  color: #779ECB;
+  padding: 2em 1vmin 1em 1vmin;
+  font-family:'Open Sans', sans-serif;
+}
+.login{
+  display: none;
+  top: 0;
+
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #779ECB;
+}
+@media screen and (max-width: 1024px){
+  header .text{
+    left: 5%;
+    width: 80%;
+  }
+  header input{
+    width: 30%
+  }
+  .menu a{
+    font-size: 1em
+  }
+}
+@media screen and (max-width: 825px){
+  .banner{
+    grid-template-columns: 50% 50%;
+    grid-column-gap: 0%
+  }
+  .banner, header{
+    padding: 2vmin 10vmin;
+  }
+  header .text{
+    left: 10vmin;
+    width: 80%;
+  }
+  header input{
+    width: 30%
+  }
+  header button{
+    width: 30%
+  }
+  .whiteback{
+    display: none
+  }
+  .image{
+    display: none;
+    opacity: 0.2;
+    width: 100%;
+    position: absolute;
+    background-size: cover;
+  }
+  .forms{
+    width: 100%;
+    height: 80%
+  }
+  .register form{
+    width: 90%;
+    bottom: 0
+  }
+  .register textarea{
+    height: 15%
+  }
+}
+@media screen and (max-width: 825px) and (max-height:450px) and (orientation: landscape){
+  header .text{
+    font-size: 1.5em;
+  }
+  .signup-button,.login-button{
+    display: none;
+  }
+  .forms{
+    height: 100%
+  }
+}
+@media screen and (max-width: 450px){
+  .menu a:nth-of-type(1){
+    display: none
+  }
+  header input{
+    width: 80%;
+    display: block;
+    margin: 1em 0;
+  }
+  header .text{
+    font-size: 1.5em;
+  }
+  header button{
+    position: relative;
+    margin: 0;
+    padding: 1.5vmin;
+    width: 80%
+  }
+}

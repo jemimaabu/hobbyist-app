@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hobbyist is an online community for people to keep track of their hobbies.">
+    <meta name="author" content="Jemima">
+    <meta property="og:title" content="Hobbyist: A community for people with hobbies">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Hobbyist">
+    <meta property="og:url" content="https://www.hobbyist.com">
+    <meta property="og:image" content="/static/logo.png">
+    <meta property="og:locale" content="en_US">
+    <meta name="theme-color" content="#779ECB">
+    <meta name="msapplication-navbutton-color" content="#779ECB">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="/static/logo.png">
+    <link rel="stylesheet" href="/static/index.css">
+    <script src="/static/jquery/dist/jquery.min.js"></script>
+    <title>Hobbyist | Home</title>
+  </head>
+  <body>
+    <div class="whiteback">
+
+    </div>
+    <div class="banner">
+      <div class="logo">
+          <a href="/" title="Home"><img src="/static/logo.png" alt="Hobbyist Logo"></a>
+      </div>
+      <div class="menu signin">
+        <a href="#"></a>
+        <a href="/logout" onclick="log()">Logout</a>
+      </div>
+    </div>
+    <section class="register">
+      <div class="image">
+      </div>
+      <div class="forms">
+        <div class="error">
+          Something went wrong. Try again.<br>
+          Note: you can't have duplicate entries
+        </div>
+        <span class="showhobbies">
+          <p>Your hobbies:</p>
+        </span>
+        <form class="hobbies">
+          <label for="hobby">New hobby:</label>
+          <input type="text" name="hobby" id="hobby">
+          <button type="button" name="button" id="btnHobby">Add</button>
+        </form>
+    </div>
+    </section>
+  </body>
+</html>
+<script type="text/javascript">
+$(function() {
+  $.ajax({
+            url: '/showHobby',
+            type: 'GET',
+            success: function(res) {
+                console.log(res);
+                var span = $('<span>')
+                .attr('class','showhobbies')
+                .append($('<p>'));
+                var hobbyObj = JSON.parse(res);
+                var hobby = '';
+                $.each(hobbyObj, function(index,value){
+                  hobby = $(span).clone();
+                  $(hobby).find('p').text(value.Hobby);
+                  $('.forms').append(hobby);
+                });
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+  $('#btnHobby').click(function() {
+
+      $.ajax({
+          url: '/addHobby',
+          data: $('form').serialize(),
+          type: 'POST',
+          success: function(response) {
+            if (response.redirect){
+              window.location.href = response.redirect;
+            }
+              console.log(response);
+          },
+          error: function(error) {
+              console.log(error);
+          }
+      });
+  });
+});
+</script>
