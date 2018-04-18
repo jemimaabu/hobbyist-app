@@ -4,6 +4,9 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
 mysql = MySQL()
+
+#CLEARDB_DATABASE_URL: mysql://bc318808df5eaf:25b4c773@us-cdbr-iron-east-05.cleardb.net/heroku_f959c05b805d118?reconnect=true
+
 app.config['MYSQL_DATABASE_USER']='root'
 app.config['MYSQL_DATABASE_PASSWORD']='Rootpass@123'
 app.config['MYSQL_DATABASE_DB']='Hobbies'
