@@ -209,15 +209,29 @@ header button:hover:after{
   left: 0;
   right: 0
 }
+.hobbies{
+
+}
 .showhobbies:nth-of-type(1) p{
   color: white;
   font-size: 1.2em;
   text-transform: none;
   margin-top: 0;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0
 }
 .showhobbies p{
   margin-right: 0.5em;
   text-transform: capitalize;
+  width: fit-content;
+  border: 1px solid white;
+  background-color: white;
+  padding: 0.2em 0.5em;
+  border-radius: 1em;
+  display: inline-block;
 }
 .error{
   position: absolute;
