@@ -6,11 +6,14 @@ app = Flask(__name__)
 mysql = MySQL()
 
 #CLEARDB_DATABASE_URL: mysql://bc318808df5eaf:25b4c773@us-cdbr-iron-east-05.cleardb.net/heroku_f959c05b805d118?reconnect=true
-
-app.config['MYSQL_DATABASE_USER']='root'
-app.config['MYSQL_DATABASE_PASSWORD']='Rootpass@123'
-app.config['MYSQL_DATABASE_DB']='Hobbies'
-app.config['MYSQL_DATABASE_HOST']='localhost'
+app.config['MYSQL_DATABASE_USER']='bc318808df5eaf'
+app.config['MYSQL_DATABASE_PASSWORD']='25b4c773'
+app.config['MYSQL_DATABASE_DB']='heroku_f959c05b805d118'
+app.config['MYSQL_DATABASE_HOST']='us-cdbr-iron-east-05.cleardb.net'
+#app.config['MYSQL_DATABASE_USER']='root'
+#app.config['MYSQL_DATABASE_PASSWORD']='Rootpass@123'
+#app.config['MYSQL_DATABASE_DB']='Hobbies'
+#app.config['MYSQL_DATABASE_HOST']='localhost'
 mysql.init_app(app)
 app.secret_key="I've got the key, I've got the secret"
 
@@ -41,6 +44,7 @@ def signup():
 
         if len(data) is 0:
             conn.commit()
+            session['user'] = data[0][0]
             return jsonify(dict(redirect='home'))
         else:
             return jsonify(dict(redirect='error'))
@@ -113,9 +117,9 @@ def addHobby():
             return jsonify(dict(redirect='/error'))
     except Exception as e:
         return jsonify(dict(redirect='/home_error'))
-    finally:
-        cursor.close()
-        conn.close()
+    #finally:
+    #    cursor.close()
+     #   conn.close()
 
 @app.route('/showHobby')
 def showHobby():

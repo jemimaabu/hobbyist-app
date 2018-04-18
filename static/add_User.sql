@@ -1,5 +1,4 @@
-CREATE DATABASE Hobbies;
-USE Hobbies;
+USE heroku_f959c05b805d118;
 CREATE TABLE user (id BIGINT NOT NULL AUTO_INCREMENT, name varchar(225), email varchar(225), number varchar(225), password VARCHAR(225), PRIMARY KEY (id));
 
 DELIMITER $$
